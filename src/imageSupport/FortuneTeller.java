@@ -11,5 +11,4 @@ public class FortuneTeller {
 		@SuppressWarnings("unused")
 		GUI go = new GUI();
 	}
-
 }

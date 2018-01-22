@@ -20,20 +20,18 @@ public class SetUpArrays {
 	public SetUpArrays()
 	{
 		this.setUpArrays();
-		System.out.println("In the setUpArrays class.  1");
+//		System.out.println("In the setUpArrays class.  1");
 	}
 
 	public void setUpArrays()
 	
 	{
-		System.out.println("In the setUpArrays class.  2");
-		// We will populate all three arrays by using ten input files - 	
+		// We will populate all three arrays by using six input files - 	
 		//   this logic will populate the stones array
 		int stoneEntries = 0;
 		
 		// Set up the stones array
 		stonesInfo = new Stones[25];
-		System.out.println("size of the stones info array is " + stonesInfo.length);
 		for (int i = 0; i<25; i++)   stonesInfo[i] = new Stones();
 		
 		//   Set up to read the stone names and meanings file 
