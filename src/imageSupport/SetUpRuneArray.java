@@ -16,12 +16,10 @@ public class SetUpRuneArray extends ArrayList<ImageIcon> {
 	public SetUpRuneArray()
 	{
 		this.setUpRuneArray();
-		//		System.out.println("In the setUpRuneArray class.  1");
 	}
 
 	public ArrayList<ImageIcon> setUpRuneArray()
 	{
-		//		System.out.println("In the setUpRuneArray class.  2");
 		rune01 = new ImageIcon("runes/rune01.gif");
 		rune02 = new ImageIcon("runes/rune02.gif");
 		rune03 = new ImageIcon("runes/rune03.gif");
@@ -47,7 +45,6 @@ public class SetUpRuneArray extends ArrayList<ImageIcon> {
 		rune23 = new ImageIcon("runes/rune23.gif");
 		rune24 = new ImageIcon("runes/rune24.gif");
 		rune25 = new ImageIcon("runes/rune25.gif");
-		//		System.out.println("In the setUpRuneArray class.  3");
 		runesArray.add(rune01);
 		runesArray.add(rune02);
 		runesArray.add(rune03);
@@ -73,7 +70,6 @@ public class SetUpRuneArray extends ArrayList<ImageIcon> {
 		runesArray.add(rune23);
 		runesArray.add(rune24);
 		runesArray.add(rune25);
-		//		System.out.println("In the setUpRuneArray class.  4");
 		return runesArray;
 	}
 	public ImageIcon getRunePic(int index) {
