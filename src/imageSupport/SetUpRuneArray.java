@@ -8,21 +8,21 @@ import javax.swing.ImageIcon;
 public class SetUpRuneArray extends ArrayList<ImageIcon> {
 
 	private ImageIcon rune01, rune02, rune03, rune04, rune05, rune06, rune07, rune08, rune09, 
-         rune10, rune11, rune12, rune13, rune14, rune15, rune16, rune17, rune18, rune19, 
-	     rune20, rune21, rune22, rune23, rune24, rune25;
+	rune10, rune11, rune12, rune13, rune14, rune15, rune16, rune17, rune18, rune19, 
+	rune20, rune21, rune22, rune23, rune24, rune25;
 	public ArrayList<ImageIcon> runesArray = new ArrayList<ImageIcon>(25); 
-	
+
 
 	public SetUpRuneArray()
 	{
 		this.setUpRuneArray();
-//		System.out.println("In the setUpRuneArray class.  1");
+		//		System.out.println("In the setUpRuneArray class.  1");
 	}
 
 	public ArrayList<ImageIcon> setUpRuneArray()
 	{
-//		System.out.println("In the setUpRuneArray class.  2");
-	    rune01 = new ImageIcon("runes/rune01.gif");
+		//		System.out.println("In the setUpRuneArray class.  2");
+		rune01 = new ImageIcon("runes/rune01.gif");
 		rune02 = new ImageIcon("runes/rune02.gif");
 		rune03 = new ImageIcon("runes/rune03.gif");
 		rune04 = new ImageIcon("runes/rune04.gif");
@@ -47,7 +47,7 @@ public class SetUpRuneArray extends ArrayList<ImageIcon> {
 		rune23 = new ImageIcon("runes/rune23.gif");
 		rune24 = new ImageIcon("runes/rune24.gif");
 		rune25 = new ImageIcon("runes/rune25.gif");
-//		System.out.println("In the setUpRuneArray class.  3");
+		//		System.out.println("In the setUpRuneArray class.  3");
 		runesArray.add(rune01);
 		runesArray.add(rune02);
 		runesArray.add(rune03);
@@ -73,8 +73,10 @@ public class SetUpRuneArray extends ArrayList<ImageIcon> {
 		runesArray.add(rune23);
 		runesArray.add(rune24);
 		runesArray.add(rune25);
-//		System.out.println("In the setUpRuneArray class.  4");
+		//		System.out.println("In the setUpRuneArray class.  4");
 		return runesArray;
 	}
-
+	public ImageIcon getRunePic(int index) {
+		return runesArray.get(index);
+	}
 }
