@@ -12,7 +12,8 @@ public class GUI extends JFrame
 	 * this is the GUI code for Karen Palmer's final project
 	 */
 	private JFrame f;
-	private ImageIcon picture = new ImageIcon("runes/rune01.gif");
+	private ImageIcon picture = new ImageIcon("randomPics/fortuneImage.png");
+	private ImageIcon quotePic = new ImageIcon("randomPics/quoteImage.png");
 	private JPanel buttonPanel;
 	private JButton rune;
 	private JButton stone;
@@ -23,6 +24,7 @@ public class GUI extends JFrame
 	int index = 0;
 	SetUpArrays threeArrays = new SetUpArrays();
 	SetUpRuneArray runeImages = new SetUpRuneArray();
+	SetUpStoneArray stoneImages = new SetUpStoneArray();
 
 	public GUI()
 	{
@@ -95,9 +97,9 @@ public class GUI extends JFrame
 				fortuneText.setText(whatToWrite);
 				fortuneText.setFont(new Font("Lucida Bright", Font.ITALIC, 16));
 				fortuneText.setBackground(Color.PINK);
-//				label.setIcon(runeImages.get(index));
-//				imagePanel.add(label);				
-//				f.add(imagePanel, BorderLayout.WEST);
+				label.setIcon(runeImages.getRunePic(index));
+				imagePanel.add(label);				
+				f.add(imagePanel, BorderLayout.WEST);
 				
 			}
 			else if (event.getActionCommand().equals("Stone Fortune"))
@@ -108,6 +110,9 @@ public class GUI extends JFrame
 				fortuneText.setText(whatToWrite);
 				fortuneText.setFont(new Font("Copperplate Gothic Light", Font.PLAIN, 18));
 				fortuneText.setBackground(Color.GRAY);
+				label.setIcon(stoneImages.getStonePic(index));
+				imagePanel.add(label);				
+				f.add(imagePanel, BorderLayout.WEST);
 			}
 			else if (event.getActionCommand().equals("Words of Wisdom"))
 			{
@@ -117,6 +122,9 @@ public class GUI extends JFrame
 				fortuneText.setText(whatToWrite);
 				fortuneText.setFont(new Font("Lucida Blackletter", Font.PLAIN, 18));
 				fortuneText.setBackground(Color.LIGHT_GRAY);
+				label.setIcon(quotePic);
+				imagePanel.add(label);				
+				f.add(imagePanel, BorderLayout.WEST);
 			}
 		}
 	}
