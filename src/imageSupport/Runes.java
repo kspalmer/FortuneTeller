@@ -1,5 +1,11 @@
 package imageSupport;
 
+/**
+ * The Runes class
+ * Instance made up of two String fields: runeName and runeMean
+ * @author Karen Palmer
+ *
+ */
 public class Runes 
 {
 	private String runeName;
@@ -26,13 +32,35 @@ public class Runes
 		runeMean  = newRune.runeMean;
 	}
 
-	// Setters and Getters
+	/**
+	 * Updater method
+	 * @param a - String input with the Rune Name
+	 */
 	public void setRuneName(String a)   { runeName  = a; }
+
+	/**
+	 * Accessor method
+	 * @return - String of the Rune Name
+	 */
 	public String getRuneName()         { return runeName; }
+
+	/**
+	 * Updater method
+	 * @param q - String input with the Rune Meaning
+	 */
 	public void setRuneMean(String q)   { runeMean  = q; }
+
+	/**
+	 * Accessor method
+	 * @return - String of the Rune Meaning
+	 */
 	public String getRuneMean()         { return runeMean; }
 
-	// Equals method
+	/**
+	 * Compares two Runes objects
+	 * @param obj - Runes object input
+	 * @return - boolean - true if objects match, false if objects do not match
+	 */
 	public boolean equals(Object obj) 
 	{
 		Runes other = (Runes) obj;
@@ -43,7 +71,11 @@ public class Runes
 		return true;
 	}
 
-	// Copy method
+	/**
+	 * Create a deep copy of a Runes object
+	 * @param obj - a Runes object
+	 * @return - a copy of the Runes object
+	 */
 	public Object copy(Object obj) 
 	{
 		Runes other = (Runes) obj;
@@ -51,6 +83,5 @@ public class Runes
 		other.runeMean  = runeMean;
 		return other;
 	}
-
 
 }

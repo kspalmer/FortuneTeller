@@ -2,29 +2,32 @@ package imageSupport;
 
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
 @SuppressWarnings("serial")
+/**
+ * This is the class that creates the graphical user interface for the Alex(3) team's
+ * Fortune Teller application.
+ * @author Karen Palmer
+ */
 public class GUI extends JFrame 
 {
-	/**
-	 * this is the GUI code for Karen Palmer's final project
-	 */
 	private JFrame f;
-	private ImageIcon picture = new ImageIcon("randomPics/fortuneImage.png");
+	private ImageIcon picture  = new ImageIcon("randomPics/fortuneImage.png");
 	private ImageIcon quotePic = new ImageIcon("randomPics/quoteImage.png");
 	private JPanel buttonPanel;
 	private JButton rune;
 	private JButton stone;
 	private JButton quote;
+	private JButton astro;
 	private JLabel label;
-    private JPanel imagePanel;
-    private JTextArea fortuneText;
+	private JPanel imagePanel;
+	private JTextArea fortuneText;
 	int index = 0;
-	SetUpArrays threeArrays = new SetUpArrays();
-	SetUpRuneArray runeImages = new SetUpRuneArray();
+	SetUpArrays     threeArrays = new SetUpArrays();
+	SetUpRuneArray  runeImages  = new SetUpRuneArray();
 	SetUpStoneArray stoneImages = new SetUpStoneArray();
+	SetUpAstroArray astroImages = new SetUpAstroArray();
 
 	public GUI()
 	{
@@ -46,22 +49,20 @@ public class GUI extends JFrame
 		buttonPanel.add(stone);
 		quote = new JButton ("Words of Wisdom");
 		buttonPanel.add(quote);
-		
+		astro = new JButton ("Astro Signs");
+		buttonPanel.add(astro);
+
 		f.add(buttonPanel, BorderLayout.NORTH);
-		
+
 		imagePanel = new JPanel();
 		imagePanel.setSize(75, 100);
 		imagePanel.setBackground(Color.BLACK);
 		imagePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 12));
-				
 		label = new JLabel();
-		
 		label.setIcon(picture);
-		
 		imagePanel.add(label);
-		
 		f.add(imagePanel, BorderLayout.WEST);
-		
+
 		JPanel fortune = new JPanel();
 		fortuneText = new JTextArea(6,42);
 		fortuneText.setEditable(false);
@@ -69,9 +70,9 @@ public class GUI extends JFrame
 		fortuneText.setWrapStyleWord(true);
 		fortuneText.setBackground(Color.WHITE);
 		fortuneText.setBorder(BorderFactory.createLineBorder (Color.black, 12));
-		fortuneText.setFont(new Font("Times New Roman", Font.ITALIC, 16));
-		fortuneText.setText("Welcome to the Fortune Teller. \nClick on a button at the top "
-				+ "to get started.");
+		fortuneText.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+		fortuneText.setText("       Welcome to the Fortune Teller. \n\n       Click "
+				+ "on a button at the top to get started.");
 		fortune.add(fortuneText);
 		f.add(fortuneText, BorderLayout.CENTER);
 
@@ -81,9 +82,17 @@ public class GUI extends JFrame
 		rune.addActionListener(handler);
 		stone.addActionListener(handler);
 		quote.addActionListener(handler);
+		astro.addActionListener(handler);
 
 	}
-	
+
+	/**
+	 * For the Fortune Teller app, this is where the requested screen is created 
+	 * in response to clicking on one of the buttons at the top of the jpanel.
+	 * 
+	 * @author Karen Palmer
+	 *
+	 */
 	private class HandlerClass implements ActionListener
 	{
 		String whatToWrite;
@@ -100,7 +109,7 @@ public class GUI extends JFrame
 				label.setIcon(runeImages.getRunePic(index));
 				imagePanel.add(label);				
 				f.add(imagePanel, BorderLayout.WEST);
-				
+
 			}
 			else if (event.getActionCommand().equals("Stone Fortune"))
 			{
@@ -123,6 +132,22 @@ public class GUI extends JFrame
 				fortuneText.setFont(new Font("Lucida Blackletter", Font.PLAIN, 18));
 				fortuneText.setBackground(Color.LIGHT_GRAY);
 				label.setIcon(quotePic);
+				imagePanel.add(label);				
+				f.add(imagePanel, BorderLayout.WEST);
+			}
+			else if (event.getActionCommand().equals("Astro Signs"))
+			{
+				index = (int) (12 * Math.random());
+				whatToWrite = "\n    " + threeArrays.getAstroInfo(index).getAstroName() + 
+						" characteristics \n\n"
+						+ threeArrays.getAstroInfo(index).getAstroLikes() + "\n" 
+						+ threeArrays.getAstroInfo(index).getAstroDislikes() + "\n" 
+						+ threeArrays.getAstroInfo(index).getAstroStrengths() + "\n" 
+						+ threeArrays.getAstroInfo(index).getAstroWeaknesses() + "\n" ; 
+				fortuneText.setText(whatToWrite);
+				fortuneText.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+				fortuneText.setBackground(Color.ORANGE);
+				label.setIcon(astroImages.getAstroPic(index));
 				imagePanel.add(label);				
 				f.add(imagePanel, BorderLayout.WEST);
 			}

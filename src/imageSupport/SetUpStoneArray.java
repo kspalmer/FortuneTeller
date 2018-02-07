@@ -1,9 +1,17 @@
 package imageSupport;
 
 import java.util.ArrayList;
-
 import javax.swing.ImageIcon;
 
+/**
+ * The SetUpStoneArray class
+ * 
+ * This will set up an array of ImageIcon objects for use by Karen Palmer's Fortune Teller App
+ * This class moves a set of photos of semi-precious stones into an ArrayList
+ * 
+ * @author Karen Palmer
+ *
+ */
 @SuppressWarnings("serial")
 public class SetUpStoneArray extends ArrayList<ImageIcon> {
 
@@ -72,6 +80,13 @@ public class SetUpStoneArray extends ArrayList<ImageIcon> {
 		stonesArray.add(stone25);
 		return stonesArray;
 	}
+	
+	/**
+	 * Returns an ImageIcon at a specific index from the Stones Array
+	 * 
+	 * @param index - int indicating the requested index
+	 * @return ImageIcon of a picture of the requested Stone
+	 */
 	public ImageIcon getStonePic(int index) {
 		return stonesArray.get(index);
 	}
