@@ -51,7 +51,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + file1Name);
+			System.out.println("Error opening the file " + file1Name);
 			System.exit(0);
 		}
 		try
@@ -60,7 +60,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + file2Name);
+			System.out.println("Error opening the file " + file2Name);
 			System.exit(0);
 		}
 
@@ -96,7 +96,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + file3Name);
+			System.out.println("Error opening the file " + file3Name);
 			System.exit(0);
 		}
 		try
@@ -105,7 +105,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + file4Name);
+			System.out.println("Error opening the file " + file4Name);
 			System.exit(0);
 		}
 
@@ -141,7 +141,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + file5Name);
+			System.out.println("Error opening the file " + file5Name);
 			System.exit(0);
 		}
 		try
@@ -150,7 +150,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + file6Name);
+			System.out.println("Error opening the file " + file6Name);
 			System.exit(0);
 		}
 
@@ -185,6 +185,8 @@ public class SetUpArrays {
 		Scanner inputaStream = null;
 		String filebName = "astrodislikes.txt";
 		Scanner inputbStream = null;
+		String filecName = "astrocredit.txt";
+		Scanner inputcStream = null;
 
 		try
 		{
@@ -192,7 +194,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + file7Name);
+			System.out.println("Error opening the file " + file7Name);
 			System.exit(0);
 		}
 		try
@@ -201,7 +203,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + file8Name);
+			System.out.println("Error opening the file " + file8Name);
 			System.exit(0);
 		}
 		try
@@ -210,7 +212,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + file9Name);
+			System.out.println("Error opening the file " + file9Name);
 			System.exit(0);
 		}
 		try
@@ -219,7 +221,7 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + fileaName);
+			System.out.println("Error opening the file " + fileaName);
 			System.exit(0);
 		}
 		try
@@ -228,7 +230,16 @@ public class SetUpArrays {
 		}
 		catch(FileNotFoundException e)
 		{
-			System.out.println("Error opening the file" + filebName);
+			System.out.println("Error opening the file " + filebName);
+			System.exit(0);
+		}
+		try
+		{
+			inputcStream = new Scanner(new File(filecName));
+		}
+		catch(FileNotFoundException e)
+		{
+			System.out.println("Error opening the file " + filecName);
 			System.exit(0);
 		}
 
@@ -240,11 +251,13 @@ public class SetUpArrays {
 			String line9  = input9Stream.nextLine();
 			String linea  = inputaStream.nextLine();
 			String lineb  = inputbStream.nextLine();
+			String linec  = inputcStream.nextLine();
 			astroInfo[astroEntries].setAstroName(line7); 
 			astroInfo[astroEntries].setAstroLikes(line8);
 			astroInfo[astroEntries].setAstroDislikes(line9);
 			astroInfo[astroEntries].setAstroStrengths(linea);
 			astroInfo[astroEntries].setAstroWeaknesses(lineb);
+			astroInfo[astroEntries].setAstroCredit(linec);
 			astroEntries++;
 		}
 		// Let's now close the files
@@ -253,6 +266,7 @@ public class SetUpArrays {
 		input9Stream.close();
 		inputaStream.close();
 		inputbStream.close();
+		inputcStream.close();
 
 	}
 

@@ -139,13 +139,15 @@ public class GUI extends JFrame
 			{
 				index = (int) (12 * Math.random());
 				whatToWrite = "\n    " + threeArrays.getAstroInfo(index).getAstroName() + 
-						" characteristics \n\n"
-						+ threeArrays.getAstroInfo(index).getAstroLikes() + "\n" 
-						+ threeArrays.getAstroInfo(index).getAstroDislikes() + "\n" 
-						+ threeArrays.getAstroInfo(index).getAstroStrengths() + "\n" 
-						+ threeArrays.getAstroInfo(index).getAstroWeaknesses() + "\n" ; 
-				fortuneText.setText(whatToWrite);
-				fortuneText.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+						" characteristics \n\n "
+						+ threeArrays.getAstroInfo(index).getAstroLikes() + "\n " 
+						+ threeArrays.getAstroInfo(index).getAstroDislikes() + "\n " 
+						+ threeArrays.getAstroInfo(index).getAstroStrengths() + "\n " 
+						+ threeArrays.getAstroInfo(index).getAstroWeaknesses() + "\n " 
+						+ "\n Astro text credit: " 
+						+ threeArrays.getAstroInfo(index).getAstroCredit(); 
+				fortuneText.setText("Here is your Astro Signs Message: \n" + whatToWrite);
+				fortuneText.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 				fortuneText.setBackground(Color.ORANGE);
 				label.setIcon(astroImages.getAstroPic(index));
 				imagePanel.add(label);				

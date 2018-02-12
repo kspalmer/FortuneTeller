@@ -18,6 +18,7 @@ public class Astro
 	private String astroDislikes;
 	private String astroStrengths;
 	private String astroWeaknesses;
+	private String astroCredit;
 
 	// a default constructor
 	Astro() 
@@ -27,16 +28,18 @@ public class Astro
 		astroDislikes   = "N/A";
 		astroStrengths  = "N/A";
 		astroWeaknesses = "N/A";
+		astroCredit     = "N/A";
 	}
 
 	// specified constructor
-	Astro(String a, String s, String w, String l, String d)
+	Astro(String a, String s, String w, String l, String d, String c)
 	{
 		astroName        = a;
 		astroStrengths   = s;
 		astroWeaknesses  = w;
 		astroLikes       = l;
 		astroDislikes    = d;
+		astroCredit      = c;
 	}
 
 	// construct an object from an object (copy constructor)
@@ -47,6 +50,7 @@ public class Astro
 		astroDislikes    = newAstro.astroDislikes;
 		astroStrengths   = newAstro.astroStrengths;
 		astroWeaknesses  = newAstro.astroWeaknesses;
+		astroCredit      = newAstro.astroCredit;
 	}
 
 	/**
@@ -110,6 +114,19 @@ public class Astro
 	public String getAstroWeaknesses()         { return astroWeaknesses; }
 
 	/**
+	 * Accessor method
+	 * @return - String of the Weaknesses associated with the sign
+	 */
+	public String getAstroCredit()         { return astroCredit; }
+
+	/**
+	 * Updater method
+	 * @param a - String input with the Weaknesses associated with the sign
+	 */
+	public void setAstroCredit(String c)   { astroCredit  = c; }
+	
+
+	/**
 	 * Compares two Astro objects
 	 * @param obj - Astro object input
 	 * @return - boolean - true if objects match, false if objects do not match
@@ -127,6 +144,8 @@ public class Astro
 			return false;
 		if (!astroWeaknesses.equals(other.astroWeaknesses))
 			return false;
+		if (!astroCredit.equals(other.astroCredit))
+			return false;
 		return true;
 	}
 
@@ -143,6 +162,7 @@ public class Astro
 		other.astroDislikes    = astroDislikes;
 		other.astroStrengths   = astroStrengths;
 		other.astroWeaknesses  = astroWeaknesses;
+		other.astroCredit      = astroCredit;
 		return other;
 	}
 
