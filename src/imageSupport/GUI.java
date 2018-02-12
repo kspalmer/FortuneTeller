@@ -103,7 +103,7 @@ public class GUI extends JFrame
 				index = (int) (25 * Math.random());
 				whatToWrite = "\n    " + threeArrays.getRunesInfo(index).getRuneName() + 
 						" - \n\n    " + threeArrays.getRunesInfo(index).getRuneMean(); 
-				fortuneText.setText(whatToWrite);
+				fortuneText.setText("Here is your Rune Fortune Message: \n" +whatToWrite);
 				fortuneText.setFont(new Font("Lucida Bright", Font.ITALIC, 16));
 				fortuneText.setBackground(Color.PINK);
 				label.setIcon(runeImages.getRunePic(index));
@@ -116,7 +116,7 @@ public class GUI extends JFrame
 				index = (int) (25 * Math.random());
 				whatToWrite = "\n    " + threeArrays.getStonesInfo(index).getStoneName() + 
 						" " + threeArrays.getStonesInfo(index).getStoneMean(); 
-				fortuneText.setText(whatToWrite);
+				fortuneText.setText("Here is your Stone Fortune Message: \n" +whatToWrite);
 				fortuneText.setFont(new Font("Copperplate Gothic Light", Font.PLAIN, 18));
 				fortuneText.setBackground(Color.GRAY);
 				label.setIcon(stoneImages.getStonePic(index));
@@ -128,7 +128,7 @@ public class GUI extends JFrame
 				index = (int) (25 * Math.random());
 				whatToWrite = "\n    " + threeArrays.getQuotesInfo(index).getQuoteAuthor() + 
 						" said \n\n       " + threeArrays.getQuotesInfo(index).getQuote(); 
-				fortuneText.setText(whatToWrite);
+				fortuneText.setText("Here is your Words of Wisdom Message: \n" +whatToWrite);
 				fortuneText.setFont(new Font("Lucida Blackletter", Font.PLAIN, 18));
 				fortuneText.setBackground(Color.LIGHT_GRAY);
 				label.setIcon(quotePic);
