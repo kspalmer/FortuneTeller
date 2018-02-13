@@ -1,5 +1,11 @@
 package imageSupport;
 
+/**
+ * The Stones class
+ * Instance made up of two String fields: stoneName and stoneMean
+ * @author Karen Palmer
+ *
+ */
 public class Stones 
 {
 	private String stoneName;
@@ -26,13 +32,35 @@ public class Stones
 		stoneMean = newQuote.stoneMean;
 	}
 
-	// Setters and Getters
+	/**
+	 * Updater method
+	 * @param a - String input with the Stone Name
+	 */
 	public void setStoneName(String a)  { stoneName = a; }
+	
+	/**
+	 * Accessor method
+	 * @return - String of the Stone Name
+	 */
 	public String getStoneName()        { return stoneName; }
+	
+	/**
+	 * Updater method
+	 * @param q - String input with the Stone Meaning
+	 */
 	public void setStoneMean(String q)  { stoneMean = q; }
+	
+	/**
+	 * Accessor method
+	 * @return - String of the Stone Meaning
+	 */
 	public String getStoneMean()        { return stoneMean; }
 
-	// Equals method
+	/**
+	 * Compares two Runes objects
+	 * @param obj - Runes object input
+	 * @return - boolean - true if objects match, false if objects do not match
+	 */
 	public boolean equals(Object obj) 
 	{
 		Stones other = (Stones) obj;
@@ -43,7 +71,11 @@ public class Stones
 		return true;
 	}
 
-	// Copy method
+	/**
+	 * Create a deep copy of a Runes object
+	 * @param obj - a Runes object
+	 * @return - a copy of the Runes object
+	 */
 	public Object copy(Object obj) 
 	{
 		Stones other = (Stones) obj;
@@ -51,6 +83,5 @@ public class Stones
 		other.stoneMean  = stoneMean;
 		return other;
 	}
-
 
 }

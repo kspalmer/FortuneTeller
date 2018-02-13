@@ -1,9 +1,17 @@
 package imageSupport;
 
 import java.util.ArrayList;
-
 import javax.swing.ImageIcon;
 
+/**
+ * The SetUpRuneArray class
+ * 
+ * This will set up an array of ImageIcon objects for use by Karen Palmer's Fortune Teller App
+ * This class moves a set of Rune Sigils into an ArrayList
+ * 
+ * @author Karen Palmer
+ *
+ */
 @SuppressWarnings("serial")
 public class SetUpRuneArray extends ArrayList<ImageIcon> {
 
@@ -72,6 +80,13 @@ public class SetUpRuneArray extends ArrayList<ImageIcon> {
 		runesArray.add(rune25);
 		return runesArray;
 	}
+	
+	/**
+	 * Returns an ImageIcon at a specific index from the Runes Array
+	 * 
+	 * @param index - int indicating the requested index
+	 * @return ImageIcon of the requested Rune sigil
+	 */
 	public ImageIcon getRunePic(int index) {
 		return runesArray.get(index);
 	}
