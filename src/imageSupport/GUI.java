@@ -20,6 +20,7 @@ public class GUI extends JFrame
 	private JButton stone;
 	private JButton quote;
 	private JButton astro;
+	private JButton feedback;	
 	private JLabel label;
 	private JPanel imagePanel;
 	private JTextArea fortuneText;
@@ -51,6 +52,8 @@ public class GUI extends JFrame
 		buttonPanel.add(quote);
 		astro = new JButton ("Astro Signs");
 		buttonPanel.add(astro);
+		feedback = new JButton ("Send Feedback");
+		buttonPanel.add(feedback);
 
 		f.add(buttonPanel, BorderLayout.NORTH);
 
@@ -83,7 +86,7 @@ public class GUI extends JFrame
 		stone.addActionListener(handler);
 		quote.addActionListener(handler);
 		astro.addActionListener(handler);
-
+		feedback.addActionListener(handler);
 	}
 
 	/**
