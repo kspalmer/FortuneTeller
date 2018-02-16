@@ -21,6 +21,7 @@ public class GUI extends JFrame
 	private JButton quote;
 	private JButton astro;
 	private JButton feedback;	
+	private JButton sendFeedback;	
 	private JLabel label;
 	private JPanel imagePanel;
 	private JTextArea fortuneText;
@@ -54,6 +55,7 @@ public class GUI extends JFrame
 		buttonPanel.add(astro);
 		feedback = new JButton ("Send Feedback");
 		buttonPanel.add(feedback);
+		sendFeedback = new JButton ("Send Email");
 
 		f.add(buttonPanel, BorderLayout.NORTH);
 
@@ -87,6 +89,7 @@ public class GUI extends JFrame
 		quote.addActionListener(handler);
 		astro.addActionListener(handler);
 		feedback.addActionListener(handler);
+		sendFeedback.addActionListener(handler);
 	}
 
 	/**
@@ -101,6 +104,7 @@ public class GUI extends JFrame
 		String whatToWrite;
 		public void actionPerformed(ActionEvent event)
 		{
+			f.remove(sendFeedback);
 			if (event.getActionCommand().equals("Rune Fortune"))
 			{
 				index = (int) (25 * Math.random());
@@ -165,6 +169,7 @@ public class GUI extends JFrame
 				label.setIcon(picture);
 				imagePanel.add(label);
 				f.add(imagePanel, BorderLayout.WEST);
+				f.add(sendFeedback, BorderLayout.EAST);
 			}
 		}
 	}
