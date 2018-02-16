@@ -156,6 +156,16 @@ public class GUI extends JFrame
 				imagePanel.add(label);				
 				f.add(imagePanel, BorderLayout.WEST);
 			}
+			else if (event.getActionCommand().equals("Send Feedback"))
+			{
+				fortuneText.setEditable(true);
+				fortuneText.setText("Enter the message you'd like to send");
+				fortuneText.setBackground(Color.WHITE);
+				fortuneText.setFont(new Font("Courier", Font.PLAIN, 16));
+				label.setIcon(picture);
+				imagePanel.add(label);
+				f.add(imagePanel, BorderLayout.WEST);
+			}
 		}
 	}
 
