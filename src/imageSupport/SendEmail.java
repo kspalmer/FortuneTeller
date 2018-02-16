@@ -12,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 
 public class SendEmail {
 
-	public static void send() {
+	public static boolean send(String text) {
 		
 		final String username = "acfortier@gmail.com";
 		final String password = "password";
@@ -36,14 +36,13 @@ public class SendEmail {
 			message.setFrom(new InternetAddress("feedback@fortunetellerapp.com"));
 			message.setRecipients(Message.RecipientType.TO,
 				InternetAddress.parse("afortier@bu.edu"));
-			message.setSubject("Testing Subject");
-			message.setText("Dear Mail Crawler,"
-				+ "\n\n No spam to my email, please!");
+			message.setSubject("Feedback for FortuneTeller");
+			message.setText(text);
 
 			Transport.send(message);
 
-			System.out.println("Done");
-
+			return true;
+			
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
 		}

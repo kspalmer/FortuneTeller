@@ -173,7 +173,9 @@ public class GUI extends JFrame
 			}
 			else if (event.getActionCommand().equals("Send Email"))
 			{
-				SendEmail.send();
+				if (SendEmail.send(fortuneText.getText())) {
+					fortuneText.setText("Success! Thank you for your feedback.");
+				}
 			}
 		}
 	}
