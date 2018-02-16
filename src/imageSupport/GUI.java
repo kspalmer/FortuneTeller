@@ -171,6 +171,10 @@ public class GUI extends JFrame
 				f.add(imagePanel, BorderLayout.WEST);
 				f.add(sendFeedback, BorderLayout.EAST);
 			}
+			else if (event.getActionCommand().equals("Send Email"))
+			{
+				SendEmail.send();
+			}
 		}
 	}
 
