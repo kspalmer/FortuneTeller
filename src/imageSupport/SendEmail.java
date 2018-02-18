@@ -10,8 +10,19 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+/**
+ * Utility class for sending emails
+ * @author Alex Fortier
+ *
+ */
 public class SendEmail {
 
+	/**
+	 * Function to actually create the email and send it using a GMail account
+	 * Must change username and password to desired to work
+	 * @param text body of the message you'd like to send
+	 * @return true if message was sent successfully
+	 */
 	public static boolean send(String text) {
 		
 		final String username = "acfortier@gmail.com";
