@@ -25,8 +25,8 @@ public class SendEmail {
 	 */
 	public static boolean send(String text) {
 		
-		final String username = "acfortier@gmail.com";
-		final String password = "password";
+		final String username = "cs633fortuneteller";
+		final String password = "QAs3curity";
 		
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -46,7 +46,7 @@ public class SendEmail {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("feedback@fortunetellerapp.com"));
 			message.setRecipients(Message.RecipientType.TO,
-				InternetAddress.parse("afortier@bu.edu"));
+				InternetAddress.parse("cs633fortuneteller@gmail.com"));
 			message.setSubject("Feedback for FortuneTeller");
 			message.setText(text);
 
