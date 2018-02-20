@@ -20,6 +20,8 @@ public class GUI extends JFrame
 	private JButton stone;
 	private JButton quote;
 	private JButton astro;
+	private JButton feedback;	
+	private JButton sendFeedback;	
 	private JLabel label;
 	private JPanel imagePanel;
 	private JTextArea fortuneText;
@@ -51,6 +53,9 @@ public class GUI extends JFrame
 		buttonPanel.add(quote);
 		astro = new JButton ("Astro Signs");
 		buttonPanel.add(astro);
+		feedback = new JButton ("Send Feedback");
+		buttonPanel.add(feedback);
+		sendFeedback = new JButton ("Send Email");
 
 		f.add(buttonPanel, BorderLayout.NORTH);
 
@@ -83,7 +88,8 @@ public class GUI extends JFrame
 		stone.addActionListener(handler);
 		quote.addActionListener(handler);
 		astro.addActionListener(handler);
-
+		feedback.addActionListener(handler);
+		sendFeedback.addActionListener(handler);
 	}
 
 	/**
@@ -98,6 +104,7 @@ public class GUI extends JFrame
 		String whatToWrite;
 		public void actionPerformed(ActionEvent event)
 		{
+			f.remove(sendFeedback);
 			if (event.getActionCommand().equals("Rune Fortune"))
 			{
 				index = (int) (25 * Math.random());
@@ -152,6 +159,23 @@ public class GUI extends JFrame
 				label.setIcon(astroImages.getAstroPic(index));
 				imagePanel.add(label);				
 				f.add(imagePanel, BorderLayout.WEST);
+			}
+			else if (event.getActionCommand().equals("Send Feedback"))
+			{
+				fortuneText.setEditable(true);
+				fortuneText.setText("Enter the message you'd like to send");
+				fortuneText.setBackground(Color.WHITE);
+				fortuneText.setFont(new Font("Courier", Font.PLAIN, 16));
+				label.setIcon(picture);
+				imagePanel.add(label);
+				f.add(imagePanel, BorderLayout.WEST);
+				f.add(sendFeedback, BorderLayout.EAST);
+			}
+			else if (event.getActionCommand().equals("Send Email"))
+			{
+				if (SendEmail.send(fortuneText.getText())) {
+					fortuneText.setText("Success! Thank you for your feedback.");
+				}
 			}
 		}
 	}
